@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://assets/sky.png" type="Texture" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
-[ext_resource path="res://assets/shootsignal.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Baseman.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Evildood.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/shootsignal.png" type="Texture" id=6]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -21,33 +23,19 @@ texture = ExtResource( 2 )
 texture = ExtResource( 3 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="TimerLabel" type="Label" parent="." index="2"]
+[node name="Baseman" parent="." index="2" instance=ExtResource( 4 )]
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = -45.0
-margin_top = -87.0
-margin_right = 48.0
-margin_bottom = -35.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-text = "TIME"
-align = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
+position = Vector2( -128, 32 )
 
-[node name="Shoot" type="Sprite" parent="." index="3"]
+[node name="Evildood" parent="." index="3" instance=ExtResource( 5 )]
 
-position = Vector2( 2.18408, -75.7124 )
-scale = Vector2( 0.278461, 0.278461 )
-texture = ExtResource( 4 )
-_sections_unfolded = [ "Material" ]
+position = Vector2( 128, 32 )
+
+[node name="Shoot" type="Sprite" parent="." index="4"]
+
+position = Vector2( 0, -64 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Visibility" ]
 
 
