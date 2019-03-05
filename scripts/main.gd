@@ -5,6 +5,7 @@ var PLAYER
 var ENEMY
 var TIMER
 var TIMER_LABEL
+var SHOOT_LABEL
 
 var draw = false
 
@@ -25,6 +26,7 @@ func _ready():
 	TIMER.start()
 
 	TIMER_LABEL = get_node("TimerLabel")
+	SHOOT_LABEL = get_node("Shoot")
 
 
 func _TIMER_timeout():
@@ -38,9 +40,18 @@ func _process(delta):
 	if(SKY.global_position.y < self.global_position.y*4 && !draw):
 		timer = 0
 		SKY.global_position.y = (1-(TIMER.time_left/time))*self.global_position.y*4
+		SHOOT_LABEL.hide()
+		TIMER_LABEL.hide()
+		
 
 	timer = timer + delta
 	TIMER_LABEL.text = String(TIMER.time_left)
+	if (TIMER.time_left ==0):
+		TIMER_LABEL.text = "SHOOT!"
+		SHOOT_LABEL.show()
+
+		
+		
 
 
 

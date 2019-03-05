@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scripts/main.gd" type="Script" id=1]
 [ext_resource path="res://assets/sky.png" type="Texture" id=2]
 [ext_resource path="res://assets/background.png" type="Texture" id=3]
+[ext_resource path="res://assets/shootsignal.png" type="Texture" id=4]
 
 [node name="Node2D" type="Node2D" index="0"]
 
@@ -41,5 +42,12 @@ align = 1
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
+
+[node name="Shoot" type="Sprite" parent="." index="3"]
+
+position = Vector2( 2.18408, -75.7124 )
+scale = Vector2( 0.278461, 0.278461 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Material" ]
 
 
