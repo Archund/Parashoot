@@ -3,7 +3,7 @@ extends Node2D
 var SKY
 var PLAYER
 var ENEMY
-var timeout = 0.1
+var timeout = 0.001
 var timer = 0
 
 func _ready():
@@ -14,7 +14,7 @@ func _ready():
 
 func _process(delta):
 	
-	if(SKY.global_position.y < self.global_position.y && timer >= timeout):
+	if(SKY.global_position.y < self.global_position.y*4 && timer >= timeout):
 		timer = 0
 		SKY.global_position.y = SKY.global_position.y + 1
 
